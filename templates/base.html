@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Body Measurement Tracker</title>
+    <script src="https://unpkg.com/htmx.org@2.0.1"
+        integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/"
+        crossorigin="anonymous"></script>
+    <script>
+        // This extension takes the logic of the built in json-enc and swaps empty strings for null before submitting
+        htmx.defineExtension('custom-json-enc', {
+            onEvent: function (name, evt) {
+                if (name === 'htmx:configRequest') {
+                    evt.detail.headers['Content-Type'] = 'application/json'
+                }
+            },
+
+            encodeParameters: function (xhr, parameters, elt) {
+                xhr.overrideMimeType('text/json')
+                clean_values = {}
+                for (const pair of parameters.entries()) {
+                    key = pair[0]
+                    value = pair[1]
+                    if (value != "") {
+                        clean_values[key] = value
+                    } else {
+                        clean_values[key] = null
+                    }
+                }
+                return (JSON.stringify(clean_values))
+            }
+        })
+    </script>
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+    <script>document.body.addEventListener("htmx:configRequest", function (event) { event.detail.headers['X-Timezone'] = Intl.DateTimeFormat().resolvedOptions().timeZone })</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Weight</th>
+            <th>Fat %</th>
+            <th>Muscle %</th>
+            <th>Water %</th>
+            <th>BMI</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for measurement in measurements %}
+        <tr>
+            <td>{{ measurement.timestamp }}</td>
+            <td>{{ measurement.weight }}</td>
+            <td>{{ measurement.fat_perc }}</td>
+            <td>{{ measurement.muscle_perc }}</td>
+            <td>{{ measurement.water_perc }}</td>
+            <td>{{ measurement.bmi }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

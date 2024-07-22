@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Body Measurement Tracker</h1>
+<h2>Welcome {{ email }}</h2>
+<p><a href="/logout">Logout</a></p>
+
+<button hx-get="/new_measurement" hx-swap="innerHTML" hx-target="#body">New Measurement</button>
+<button hx-get="/table" hx-swap="innerHTML" hx-target="#body">View Table</button>
+<button hx-get="/graph" hx-swap="innerHTML" hx-target="#body">View Graph</button>
+
+<div id="body"></div>
+{% endblock %}
