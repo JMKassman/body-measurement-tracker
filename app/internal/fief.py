@@ -26,7 +26,7 @@ class CustomFiefAuth(FiefAuth):
 
 
 fief = FiefAsync(
-    "https://auth.jmkassman.com",
+    os.environ["FIEF_URL"],
     os.environ["CLIENT_ID"],
     os.environ["CLIENT_SECRET"],
     verify=(os.environ["ENVIRONMENT"] == "production"),
