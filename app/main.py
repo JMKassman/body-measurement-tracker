@@ -2,11 +2,9 @@ import logging
 from contextlib import asynccontextmanager
 from logging.config import dictConfig
 
-from fastapi import (
-    FastAPI,
-    Request,
-)
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 from .database.database import create_db_and_tables
 from .internal.log_config import LogConfig
@@ -26,6 +24,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.include_router(auth.router)
 app.include_router(dash.router)
+app.mount("/images", StaticFiles(directory="images"), "images")
 
 
 @app.get("/", name="root", response_class=HTMLResponse)
