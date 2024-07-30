@@ -1,15 +1,15 @@
 <form hx-post="/measurement" hx-ext="custom-json-enc">
-    <label for="timestamp">Timestamp (defaults to current time):</label><br>
-    <input type="datetime-local" id="timestamp" name="timestamp"><br>
-    <label for="weight">Weight:</label><br>
-    <input type="number" id="weight" name="weight" required><br>
-    <label for="fat_perc">Fat %:</label><br>
-    <input type="number" id="fat_perc" name="fat_perc"><br>
-    <label for="muscle_perc">Muscle %:</label><br>
-    <input type="number" id="muscle_perc" name="muscle_perc"><br>
-    <label for="water_perc">Water %:</label><br>
-    <input type="number" id="water_perc" name="water_perc"><br>
-    <label for="bmi">BMI:</label><br>
-    <input type="number" id="bmi" name="bmi"><br>
-    <input type="submit">
+    <label for="timestamp" class="form-label">Timestamp (defaults to current time):</label><br>
+    <input type="datetime-local" class="form-control" id="timestamp" name="timestamp"><br>
+    <label for="weight" class="form-label">Weight:</label><br>
+    <input type="number" class="form-control" id="weight" name="weight" required><br>
+    <label for="fat_perc" class="form-label">Fat %:</label><br>
+    <input type="number" class="form-control" id="fat_perc" name="fat_perc"><br>
+    <label for="muscle_perc" class="form-label">Muscle %:</label><br>
+    <input type="number" class="form-control" id="muscle_perc" name="muscle_perc"><br>
+    <label for="water_perc" class="form-label">Water %:</label><br>
+    <input type="number" class="form-control" id="water_perc" name="water_perc"><br>
+    <label for="bmi" class="form-label">BMI:</label><br>
+    <input type="number" class="form-control" id="bmi" name="bmi"><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>

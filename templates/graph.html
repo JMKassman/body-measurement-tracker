@@ -1,0 +1,36 @@
+<div class="btn-group mb-3" role="group">
+    <button class="btn btn-outline-primary" hx-get="/graph/weight" hx-swap="innerHTML" hx-target="#graph">
+        Weight
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/fat_perc" hx-swap="innerHTML" hx-target="#graph">
+        Fat %
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/muscle_perc" hx-swap="innerHTML" hx-target="#graph">
+        Muscle %
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/water_perc" hx-swap="innerHTML" hx-target="#graph">
+        Water %
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/bmi" hx-swap="innerHTML" hx-target="#graph">
+        BMI
+    </button>
+</div>
+<div class="btn-group mb-3" role="group">
+    <button class="btn btn-outline-primary" hx-get="/graph/weight/forecast" hx-swap="innerHTML" hx-target="#graph">
+        Weight Forecast
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/fat_perc/forecast" hx-swap="innerHTML" hx-target="#graph">
+        Fat % Forecast
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/muscle_perc/forecast" hx-swap="innerHTML" hx-target="#graph">
+        Muscle % Forecast
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/water_perc/forecast" hx-swap="innerHTML" hx-target="#graph">
+        Water % Forecast
+    </button>
+    <button class="btn btn-outline-primary" hx-get="/graph/bmi/forecast" hx-swap="innerHTML" hx-target="#graph">
+        BMI Forecast
+    </button>
+</div>
+
+<div id="graph"></div>

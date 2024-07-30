@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>Body Measurement Tracker</h1>
-<h2>Welcome {{ email }}</h2>
-<p><a href="/logout">Logout</a></p>
+<div class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-body fixed-top">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1"><img src="/images/logo.png" alt="logo" height="24" width="24">
+            Body Measurement Tracker
+        </span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: end;">
+            <a href="https://auth.jmkassman.com" class="navbar-text mb-auto me-1">{{ email }}</a>
+            <a href="/logout" class="btn btn-secondary">Logout</a>
+        </div>
+    </div>
+</div>
 
-<button hx-get="/new_measurement" hx-swap="innerHTML" hx-target="#body">New Measurement</button>
-<button hx-get="/table" hx-swap="innerHTML" hx-target="#body">View Table</button>
-<button hx-get="/graph" hx-swap="innerHTML" hx-target="#body">View Graph</button>
+<div class="btn-group mb-3" style="margin-top: 5rem;" role="group">
+    <button class="btn btn-outline-dark" hx-get="/new_measurement" hx-swap="innerHTML" hx-target="#body">New
+        Measurement</button>
+    <button class="btn btn-outline-dark" hx-get="/table" hx-swap="innerHTML" hx-target="#body">View Table</button>
+    <button class="btn btn-outline-dark" hx-get="/edit" hx-swap="innerHTML" hx-target="#body">Edit
+        Measurements</button>
+    <button class="btn btn-outline-dark" hx-get="/graph" hx-swap="innerHTML" hx-target="#body">View Graph</button>
+</div>
 
 <div id="body"></div>
 {% endblock %}

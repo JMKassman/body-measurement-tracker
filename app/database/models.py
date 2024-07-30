@@ -26,10 +26,5 @@ class MeasurementPublic(MeasurementBase):
     timestamp: datetime
 
 
-class MeasurementUpdate(SQLModel):
-    id: uuid.UUID
-    weight: float | None
-    fat_perc: float | None
-    muscle_perc: float | None
-    water_perc: float | None
-    bmi: float | None
+class MeasurementUpdate(MeasurementBase):
+    timestamp: datetime

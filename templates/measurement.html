@@ -1,0 +1,9 @@
+<div hx-target="this" hx-swap="outerHTML" class="grid-row">
+    <span class="item">{{ measurement.timestamp }}</span>
+    <span class="item">{{ measurement.weight }}</span>
+    <span class="item">{{ measurement.fat_perc }}</span>
+    <span class="item">{{ measurement.muscle_perc }}</span>
+    <span class="item">{{ measurement.water_perc }}</span>
+    <span class="item">{{ measurement.bmi }}</span>
+    <button hx-get="/measurement/{{measurement.id}}/edit" class="item btn btn-primary" type="button">Edit</button>
+</div>

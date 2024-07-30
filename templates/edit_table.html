@@ -1,0 +1,14 @@
+<div class="edit-grid">
+    <div class="grid-row">
+        <span class="header item">Timestamp</span>
+        <span class="header item">Weight</span>
+        <span class="header item">Fat %</span>
+        <span class="header item">Muscle %</span>
+        <span class="header item">Water %</span>
+        <span class="header item">BMI</span>
+        <span class="item"></span>
+    </div>
+    {% for measurement in measurements %}
+    {% include "measurement.html" %}
+    {% endfor %}
+</div>
