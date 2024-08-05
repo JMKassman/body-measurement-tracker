@@ -2,12 +2,15 @@
     class="grid-row">
     <input type="datetime-local" class="item form-control" id="timestamp" name="timestamp"
         value="{{measurement.timestamp}}">
-    <input type="number" class="item form-control" id="weight" name="weight" required value="{{measurement.weight}}">
-    <input type="number" class="item form-control" id="fat_perc" name="fat_perc" value="{{measurement.fat_perc}}">
+    <input type="number" class="item form-control" id="weight" name="weight" required value="{{measurement.weight}}"
+        min="0" step="0.1">
+    <input type="number" class="item form-control" id="fat_perc" name="fat_perc" value="{{measurement.fat_perc}}"
+        min="0" step="0.1">
     <input type="number" class="item form-control" id="muscle_perc" name="muscle_perc"
-        value="{{measurement.muscle_perc}}">
-    <input type="number" class="item form-control" id="water_perc" name="water_perc" value="{{measurement.water_perc}}">
-    <input type="number" class="item form-control" id="bmi" name="bmi" value="{{measurement.bmi}}">
+        value="{{measurement.muscle_perc}}" min="0" step="0.1">
+    <input type="number" class="item form-control" id="water_perc" name="water_perc" value="{{measurement.water_perc}}"
+        min="0" step="0.1">
+    <input type="number" class="item form-control" id="bmi" name="bmi" value="{{measurement.bmi}}" min="0" step="0.1">
     <div class="item btn-group" role="group">
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-secondary" hx-get="/measurement/{{measurement.id}}">Cancel</button>

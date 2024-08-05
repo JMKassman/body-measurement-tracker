@@ -62,8 +62,10 @@ def get_measurement(
                 .astimezone(timezone)  # swap to local
                 .strftime("%Y-%m-%d %I:%M %p")
             )
-        if value is None:
+        elif value is None:
             value = ""
+        elif value is float:
+            value = f"{value:.1f}"
         clean_measurement[field] = value
     return templates.TemplateResponse(
         request, "measurement.html", {"measurement": clean_measurement}
@@ -175,8 +177,10 @@ def get_table(
                     .astimezone(timezone)  # swap to local
                     .strftime("%Y-%m-%d %I:%M %p")
                 )
-            if value is None:
+            elif value is None:
                 value = ""
+            elif value is float:
+                value = f"{value:.1f}"
             clean_measurement[field] = value
         clean_measurements.append(clean_measurement)
     return templates.TemplateResponse(
