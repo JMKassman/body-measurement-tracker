@@ -22,6 +22,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
+    <meta name="htmx-config" content='{"includeIndicatorStyles": false}'>
     <script src="https://unpkg.com/htmx.org@2.0.1"
         integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/"
         crossorigin="anonymous"></script>
@@ -74,6 +75,32 @@
 
         .item {
             grid-area: auto / auto / auto / auto
+        }
+
+        .htmx-indicator {
+            display: none;
+            opacity: 0;
+        }
+
+        .htmx-request .htmx-indicator,
+        .htmx-request.htmx-indicator {
+            display: block;
+            opacity: 1;
+            transition: opacity 2s ease-in;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity .2s ease-in;
+        }
+
+        .htmx-swapping {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .htmx-settling {
+            opacity: 0;
         }
     </style>
 </head>
